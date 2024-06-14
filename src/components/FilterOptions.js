@@ -25,7 +25,7 @@ const FilterOptions = ({ filterOptions, setFilterOptions }) => {
       <input
         type="text"
         placeholder="Filter by author..."
-        value={filterOptions.author}
+        value={filterOptions.artist}
         onChange={handleAuthorChange}
       />
     </div>

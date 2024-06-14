@@ -41,7 +41,7 @@ const BookDetails = () => {
       {book ? (
         <div>
           <div>Title: {book.title}</div>
-          <div>Author: {book.author}</div>
+          <div>Author: {book.artist}</div>
           <div>Category: {book.category}</div>
           <div>Price: ${book.price}</div>
         </div>

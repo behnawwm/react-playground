@@ -7,7 +7,7 @@ const BookList = ({ books }) => {
       {books.map(book => (
         <div key={book.id} className="book">
           <h3>{book.title}</h3>
-          <p>Author: {book.author}</p>
+          <p>Author: {book.artist}</p>
           <p>Category: {book.category}</p>
           <p>Price: ${book.price}</p>
           <Link to={`/books/${book.id}`}>View Details</Link>

@@ -11,7 +11,7 @@ const SecondhandBookstoreApp = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterOptions, setFilterOptions] = useState({
     category: '',
-    author: ''
+    artist: ''
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -21,9 +21,10 @@ const SecondhandBookstoreApp = () => {
     const fetchBooks = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://.com/books');
+        const response = await fetch('https://cors-anywhere.herokuapp.com/'+'https://www.w3schools.com/w3js/cd_catalog.js');
         const data = await response.json();
-        setBooks(data);
+
+        setBooks(data.cd);
       } catch (error) {
         console.error('Error fetching books:', error);
       } finally {
@@ -37,7 +38,7 @@ const SecondhandBookstoreApp = () => {
   const filteredBooks = books.filter(book => (
     book.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
     (filterOptions.category === '' || book.category === filterOptions.category) &&
-    (filterOptions.author === '' || book.author === filterOptions.author)
+    (filterOptions.artist === '' || book.artist === filterOptions.artist)
   ));
 
   const indexOfLastBook = currentPage * booksPerPage;
