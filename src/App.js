@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import SecondhandBookstoreApp from './components/SecondhandBookstoreApp';
+import BookDetails from './components/BookDetails';
+import UserProfile from './components/UserProfile';
+import PrivateRoute from './components/PrivateRoute';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<SecondhandBookstoreApp />} />
+      <Route path="/profile" element={<PrivateRoute component={UserProfile} />} />
+      <Route path="/books/:id" element={<BookDetails />} />
+    </Routes>
   );
-}
+};
 
 export default App;
