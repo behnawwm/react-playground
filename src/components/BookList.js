@@ -5,12 +5,12 @@ const BookList = ({ books }) => {
   return (
     <div className="books">
       {books.map(book => (
-        <div key={book.id} className="book">
+        <div key={book._id} className="book">
           <h3>{book.title}</h3>
-          <p>Author: {book.artist}</p>
+          <p>Author: {book.author}</p>
           <p>Category: {book.category}</p>
           <p>Price: ${book.price}</p>
-          <Link to={`/books/${book.id}`}>View Details</Link>
+          <Link to={`/books/${book._id}`}>View Details</Link>
         </div>
       ))}
     </div>

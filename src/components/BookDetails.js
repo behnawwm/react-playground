@@ -11,7 +11,7 @@ const BookDetails = () => {
     const fetchBookDetails = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`https://example.com/books/${id}`);
+        const response = await fetch(`https://example.com/books/`);
         if (!response.ok) {
           throw new Error('Failed to fetch book details');
         }
@@ -41,7 +41,7 @@ const BookDetails = () => {
       {book ? (
         <div>
           <div>Title: {book.title}</div>
-          <div>Author: {book.artist}</div>
+          <div>Author: {book.author}</div>
           <div>Category: {book.category}</div>
           <div>Price: ${book.price}</div>
         </div>
